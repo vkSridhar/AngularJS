@@ -1,0 +1,78 @@
+﻿#fontHeading
+{
+    background-color:lightgray;
+    font-family:'Times New Roman';
+    font-size:25px;
+    height:40px;
+    
+}
+
+#tdHead 
+{
+    padding-left: 15px;
+    padding-top:8px;
+    font-size:18px;
+    /*font-weight:bold;*/
+}
+#tdHeight
+{
+    height:30px;
+    float:left;
+    background:#f8f8f8;
+
+}
+#tdPadStyle
+{
+    padding-top:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+    padding-left:10px;
+}
+
+#tdAge
+{
+    padding-top:10px;
+    padding-bottom:6px;
+}
+
+#tdSSN
+{
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+#tdName
+{
+    padding-left:100px;
+}
+
+#raceTabTD
+{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:15px;
+    
+}
+
+#labelRaceTab
+{
+    padding-left:10px;
+}
+
+#formerTabTD
+{
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:15px;
+    padding-right:10px;
+    
+}
+#tdAkaTab
+{
+    padding-bottom:20px;
+}
+
+#AkaTab2
+{
+    padding-bottom:20px;
+}

@@ -1,0 +1,177 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* MVA DLS site specific stylesheet 
+   tc 12/22/2014
+*/
+.top_menuMain {
+    margin-top: 4px;
+    margin-left: 8px;
+    margin-right: 12px;
+}
+
+.sub_menuMain {
+    margin-top: 4px;
+    margin-left: 8px;
+    margin-right: 12px;
+}
+
+.nav_nextButton
+{
+    height:40px;
+    width:100px;
+    word-wrap:break-word;
+    float:right;
+}
+
+.FloatLeft
+{
+    float:left;
+}
+.FloatRight
+{
+    float:right;
+}
+
+.divDOBGroupBox
+{
+    /*border:solid;
+    border-color:black;
+    border-radius:5px;*/
+    font-family:Arial;
+    text-align:center;
+}
+
+/* ToolBar items */
+.divToolBarItem
+{
+    background-color:#d3d3d3; 
+    border:outset;  /*none;*/
+    border-bottom-color:darkgrey;
+    border-left-color:antiquewhite;
+    border-right-color:darkgray;
+    border-top-color:antiquewhite;
+    border-radius:6px;
+    float:left;
+    height:74px;
+    margin-bottom:4px; 
+    margin-right:2px;
+    padding-bottom:7px;
+    width:84px;
+}
+/* ToolBar Images */
+.divToolBarItemImage1
+{
+    height:28px; 
+    margin-top:10px; 
+    margin-bottom:4px; 
+    width:44px;
+}
+.divToolBarItemImage2
+{
+    height:32px; 
+    margin-top:8px; 
+    margin-bottom:2px; 
+    width:32px;
+}
+
+/* ToolBar Item Text */
+.divToolBarItemText
+{
+    text-align:center;
+}
+.ToolBarRootItemOffset 
+{
+    margin-left: 1px;
+}
+
+/* Menu settings*/
+.menuRootItemOffset 
+{
+    margin-left:25px;
+}
+
+.paddingTop0
+{
+    padding-top:0px;
+}
+
+/* StatusBar */
+.statusbar
+{
+    border:grooveinset;
+    background-color:lightgray;
+    border-color:slategray;
+    border-radius:3px;
+    border-bottom-width:1px;
+    /*border-left-width:2px;
+    border-right-width:2px;*/
+    border-top-width:1px;
+    height:22px;
+    /*padding-left:5px;
+    padding-right:5px;*/
+    padding-top:2px;
+}
+.statusbarItem
+{
+    border-color:lightgray;
+    border-left:groove;
+    /*border-left-width:2px;*/
+    border-spacing:16px;
+    float:right;
+    padding-left:14px;
+    padding-right:14px;
+    /*padding-top:2px;*/
+}
+
+/* Next Tab/Step buttons */
+.workFlowButton
+{
+    background-color:#ece9d8;
+    border-radius:6px; 
+    font-family:Arial;
+    font-size:1.2em;
+    height:32px; 
+    padding-left:12px;
+    padding-right:12px;
+}
+
+.margintop6
+{
+    /*background-color:#ece9d8;*/
+    /*border-radius:6px; 
+    font-family:Arial;
+    font-size:1.2em;*/
+    margin-top:6px;
+    /*height:32px; 
+    padding-left:12px;
+    padding-right:12px;*/
+}
+.nameTabButton{
+    float:right;
+    margin-top:6px;
+    margin-left:8px;
+    margin-right:8px;
+}

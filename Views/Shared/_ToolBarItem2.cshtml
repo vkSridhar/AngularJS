@@ -1,0 +1,11 @@
+﻿
+<link rel="stylesheet" href="~/Content/site.css" />
+@{
+    var ItemText = Model.ToString();     //.Replace("Comments", "");
+    var pngName = ItemText.ToString().Replace(" ", "").Replace(".", "");
+    string itemPng = "tlb_" + @pngName + ".png";
+}
+
+<div><img src="/Images/@itemPng" class="divToolBarItemImage2" /></div>
+<div class="divToolBarItemText">@ItemText</div>
+

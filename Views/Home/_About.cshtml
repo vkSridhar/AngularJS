@@ -1,0 +1,29 @@
+﻿
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        // Button Click handler
+        $('#StartButton').click(function () {
+            $(document).fullScreen(true);
+
+            $('#dialogAbout').dialog('close');
+        });
+    });
+</script>
+
+<div id='AboutContent'>
+    @*<p>MVA.MILS.APP : @ViewContext.Controller.GetType().Assembly.GetName().Version</p>*@
+    <p></p>
+    <p>Central Server: </p>
+    <p>Branch Server:</p>
+    <p>
+        <input id="StartButton" class="ui-button" type="button" value="Start/Resume DLS" style="float:right; margin-right:0px;" />
+    </p>
+</div>
+
+
+
+
+

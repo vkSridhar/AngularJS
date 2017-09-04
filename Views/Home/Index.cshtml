@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    <title>Index Page</title>
+</head>
+<body ng-app="MvaDLS" ng-controller="IndexController">
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script> 
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+    <script src="~/Scripts/DLS_Controllers/App.js"></script>
+    <script src="~/Scripts/DLS_Controllers/IndexController.js"></script>
+    <script src="~/Scripts/DLS_Controllers/SelectProductController.js"></script>
+    <script src="~/Scripts/DLS_Controllers/CustomerTracking.js"></script>
+  
+    <div width="100%" height="100%">
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#SelectProduct">Select Product</a>
+                            </td>
+                         </tr>
+                        <tr>
+                            <td>
+                                <a href="#CustomerTracking">Customer Tracking</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Title: {{ title }}
+                            </td>
+                        </tr>
+                  </table>
+                </td>
+                <td style="border:solid; border-color:crimson" width="70%" height="100%">
+                    <div ng-view></div>
+                </td>
+            </tr>
+        </table>     
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿
+
+@section Scripts{
+    <link rel="stylesheet" href="~/Content/site.css" />
+}
+<script type="text/javascript">
+    //ToolBar link click handlers
+    $('#_MainToolBar').on("click", "li", function () {
+        //trim string of spaces and periods from toolbar item text
+        var text = '_' + $(this).text().trim().replace(' ', '').replace(' ', '').replace('.', '');        //alert('[' + text + ']');
+        alert(text);
+        // special handling for applicationView (not the CommentsView)
+        if (text == "_View") { text = '_ApplicationView'; }
+        $('#MainClient').load('/Home/' + text);
+    }) ;
+</script>
+
+<div id="_MainToolBar" class="row" style="border-bottom:none; margin-left:0px;">
+    <ul>
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem1", "New"); }
+        </li>
+
+        
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem1", "Existing"); }
+        </li>
+
+        
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Previous"); }
+        </li>
+
+        
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Next"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Close"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Documents"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Print CTF"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Overrides"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Print App."); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "Comments"); }
+        </li>
+
+       
+        <li class="ui-button divToolBarItem" title="tt">
+            @{Html.RenderPartial("_ToolBarItem2", "View"); }
+        </li>
+    </ul>
+</div>
+
+
+
+
+        <div style="background-color:navy; font-family:Arial; font-size:1.4em; height:30px; padding-left:8px;">
+            <label style="background-color:navy; color:white; padding-top:4px;"></label>
+            <img src="~/Images/check.bmp" style="float:right; margin-right:4px; margin-top:6px;" />
+        </div>
+    
+
+
+

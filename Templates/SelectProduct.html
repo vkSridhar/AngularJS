@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Product</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <p><h3>Select Product....</h3></p>
+    <p>This is Select Product</p>
+    <p><b style="color:red" class="col-lg-offset-3">{{ vm.title }}</b></p>
+    <p> </p>
+   
+    <table style="width:606px;border:groove;height:500px">
+        <tr>
+            <td>
+                <uib-tabset>
+                    <uib-tab heading="Commercial">
+                        <table>
+                            <tr>
+                                <td id="radio_ContentComm">
+                                    <table>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio1" name="RadioGroupComm" value="1" style="padding-bottom:15px;" />    Learners Permit(Type 1 GLS)
+                                                <br />
+                                            </td>
+                                            <td id="tdSelectProduct">
+                                                {{vm.TypeText }} :<br /><br />
+                                                <select ng-model="vm.selectedCountry"
+                                                        ng-options="item for item in vm.countryArray"
+                                                        ng-change="vm.LoadState()"
+                                                        class="input-sm" style="width:100px"></select>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio2" 
+                                                       ng-model="vm.commercialType"
+                                                       ng-change="vm.LoadCountry()"
+                                                       ng-value="Driver"
+                                                       name="RadioGroupComm"  />  {{ vm.LoadDriverLicenseText }}
+                                            </td>
+                                            <td id="tdSelectProduct" style="padding-bottom:20px;">
+                                                {{vm.SubTypeText }} : <br /><br />
+                                                <select ng-model="vm.selectedState"
+                                                        ng-options="item for item in vm.stateArray"
+                                                        ng-change="vm.LoadCity()"
+                                                        class="input-sm" style="width:100px"></select>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio4" name="RadioGroupComm" value="4" />   Temporary License<br /><br />
+                                            </td>
+                                            <td id="tdSelectProduct">
+                                                {{ vm.ReasonText }} :<br /><br />
+                                                <select ng-model="vm.selectedCity"
+                                                        ng-options="item for item in vm.cityArray"
+                                                        class="input-sm" style="width:100px"></select>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio6" name="RadioGroupComm" value="6" />   Re-Examination<br />
+                                                <input type="radio" id="radio7" name="RadioGroupComm" value="7" />   Skills Test<br />
+                                                <input type="radio" id="radio8" name="RadioGroupComm" value="8" />   Hazmat Application
+                                            </td>
+                                            <td id="tdSelectProduct"></td>
+                                        </tr>
+                                    </table>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td id="tdSelectProduct"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="tdSelectProduct"></td>
+                                <td id="tdSelectProduct">
+                                    <table style="border:groove;" id="disableTableNonComm">
+                                        <tr>
+                                            <td style="padding-left:10px;padding-bottom:10px;">
+                                                Reason :
+                                                <br /><br />
+
+                                                Gratis <input type="checkbox" name="chkEnable" />
+
+                                                <input type="text" name="chkEnable" />
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="tdSelectProduct" style="min-width:220px;"></td>
+                                <td id="tdSelectProduct">
+                                    <table style="border:groove">
+                                        <tr>
+                                            <td style="padding-left:10px;padding-bottom:10px;">
+                                                <span style="padding-left:50px;"></span>
+
+                                                <input type="checkbox" name="chk1" /> Downgrade
+
+                                                <input type="checkbox" name="chk1" /> Upgrade<br /><br />
+
+                                                Reason :
+
+                                                <input type="text" name="reasonTxt2" />
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </uib-tab>
+
+                    <uib-tab heading="Non- Commercial">
+
+                        <table>
+                            <tr>
+                                <td id="radio_ContentNonComm">
+                                    <table>
+                                        <tr>
+                                            <td id="tdSelectProduct"><input type="radio" id="radio1" name="RadioGroupNonComm" value="1" style="padding-bottom:15px;" />    Learners Permit(Type 1 GLS)</td>
+                                            <td id="tdSelectProduct">Type :</td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio2" name="RadioGroupNonComm" value="2" />    Learners Permit(Type 2 Non-GLS)
+                                            </td>
+                                            <td id="tdSelectProduct">
+                                                <select></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct"><input type="radio" id="radio3" name="RadioGroupNonComm" value="3" />   Driver License</td>
+                                            <td id="tdSelectProduct" style="padding-bottom:20px;">
+                                                Subtype : <br />
+                                                <select></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio4" name="RadioGroupNonComm" value="4" />   Full License from Provisional(GLS)<br /><br />
+                                                <input type="radio" id="radio5" name="RadioGroupNonComm" value="5" />   Full License from Provisional(Non-GLS)
+                                            </td>
+
+                                            <td id="tdSelectProduct">
+                                                Reason :<br /><br />
+                                                <select></select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="tdSelectProduct">
+                                                <input type="radio" id="radio6" name="RadioGroup8" value="6" />   Provisional (GLS)<br /><br />
+                                                <input type="radio" id="radio7" name="RadioGroup8" value="7" />   Provisional(Non-GLS)
+                                            </td>
+                                            <td id="tdSelectProduct"></td>
+                                        </tr>
+                                    </table>
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td id="tdSelectProduct">
+                                    <input type="radio" id="radio8" name="RadioGroup8" value="8" />   Moped<br />
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td id="tdSelectProduct">
+                                    <input type="radio" name="Radio2" />   Temporary License (Provisional)<br /><br />
+                                    <input type="radio" name="Radio2" />   Temporary License (Regular)
+                                </td>
+                                <td id="tdSelectProduct">
+                                    <table style="border:groove;" id="disableTableNonComm">
+                                        <tr>
+                                            <td style="padding-left:10px;padding-bottom:10px;">
+                                                Reason :
+                                                <br /><br />
+                                              
+                                                Gratis <input type="checkbox" name="chkEnable" title="@tt" />
+                                             
+                                                <input type="text" name="chkEnable" title="@tt" />
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="tdSelectProduct">
+                                    <input type="radio" id="radio9" name="RadioGroup3" value="9" />    Maryland ID Card<br />
+                                    <input type="radio" id="radio10" name="RadioGroup3" value="10" />   Re-examination<br />
+                                    <input type="radio" id="radio11" name="RadioGroup3" value="11" />   Skills Test
+                                </td>
+                                <td id="tdSelectProduct">
+                                    <table style="border:groove">
+                                        <tr>
+                                            <td style="padding-left:10px;padding-bottom:10px;">
+                                                <span style="padding-left:50px;"></span>
+                                               
+                                                <input type="checkbox" name="chk1" title="@tt" /> Downgrade
+                                               
+                                                <input type="checkbox" name="chk1" title="@tt" /> Upgrade<br /><br />
+
+                                                Reason :
+                                               
+                                                <input type="text" name="reasonTxt2" title="@tt" />
+                                                <br />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </uib-tab>
+                </uib-tabset>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

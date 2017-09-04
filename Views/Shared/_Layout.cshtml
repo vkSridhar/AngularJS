@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+  
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-2.2.0.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/base.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/core.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/menu.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/resizable.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/selectable.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
+</head>
+<body style="padding-bottom:0px; padding-top:6px; width:1120px;">
+        @{Html.RenderPartial("_MainMenu");}
+    <div class="row" style="margin:0px;">
+        <div id="NavBar" class="col-lg-2 col-md-2" style="height:826px; max-width:117px; margin-left:6px; padding-left:4px; padding-right:4px;">
+            @{Html.RenderPartial("_NavBar");}
+        </div>
+        <div id="MainClient" class="col-lg-10 col-md-10" style="background-color:floralwhite; border-style:groove; border-radius:4px; height:822px; margin-top:2px; padding-left:8px; padding-right:8px; width:89%;">
+           
+               
+                   @{ Html.RenderPartial("_ToolBar"); }
+
+
+            @RenderBody()
+        </div>
+    </div>
+
+    @* must be after jquery, for IE 11 compatibility *@
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    @*<div id="dialogAbout" class="modal-dialog" style="display:none; height:300px; width:450px;" title="MVA.MILS.APP">*@
+    <div id="dialogAbout" class="ui-dialog" style="display:none; height:300px; width:450px;" title="MVA.MILS.APP">
+        @*<img src="~\images\close.png" style="float:right;" />*@
+        <p>
+            @*@Globals.APP_TITLE_FULL*@
+        </p>
+        <p>
+            @{Html.RenderPartial("~/Views/Home/_About.cshtml");}
+        </p>
+    </div>
+
+    <div class="row" style="height:32px; margin-left:124px; margin-right:1px;">
+        @{Html.RenderPartial("_StatusBar");}
+    </div>
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    @* enable script loads from partial views *@
+    @RenderSection("scripts", required: false)
+
+    @*UNCOMMENT TO ENABLE HOVER NAVBAR EXPANSION:
+        <script src="~/Scripts/hoverIntent.js"></script>*@
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true,
+                //UNCOMMENT TO ENABLE HOVER NAVBAR EXPANSION:
+                //event: "click hoverintent"
+            });
+        });
+
+        //document.ready: setup anchor and image click handlers
+        $(document).ready(function () {
+
+            // trap and ignore f11, esc since we are in FULLSCREEN
+            $(document).keydown(function (e) {
+                var keycode = (e.keyCode ? e.keyCode : e.which);
+                if (keycode == '122'  || keycode == '27') { //alert("F11 key");
+                    e.preventDefault();
+                }
+            });
+
+            //force user input to enable full screen
+            $(function () {
+                $("#dialogAbout").dialog();
+            });
+
+            //Mainmenu link click handlers
+            $('#_MainMenu').on("click", "a", function () {
+                //need as many .replace calls as max spaces in menu item, thank you javascript
+                var text = '_' + $(this).text().replace(' ', '').replace(' ', '');
+                if (text != '_About') {
+                    $('#MainClient').load('/Home/' + text);
+                }
+            });
+
+            //NavBar img click handlers
+            $('#accordion').on("click", "img", function () {
+                //need as many .replace calls as max spaces in menu item
+                var path = '_' + $(this).attr('alt').replace(' ', '').replace(' ', '');
+                $('#MainClient').load('/Home/' + path);
+            });
+
+            //ToolBar link click handlers are in _ToolBar.cshtml view
+        });
+    </script>
+</body>
+
+</html>

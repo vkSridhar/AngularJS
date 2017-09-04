@@ -1,0 +1,10 @@
+﻿
+@*<link rel="stylesheet" href="~/Content/site.css" />*@
+@{
+    var ItemText = Model;
+    string itemPng = "tlb_" + @ItemText + ".png";
+}
+
+<div><img src="/Images/@itemPng" class="divToolBarItemImage1" /></div>
+<div class="divToolBarItemText">@ItemText</div>
+
